@@ -4,18 +4,17 @@
   </head>
   <body>
     <div id="chart"></div>
-
-    <script src="/js/d3/d3.min.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <script src="/js/c3.js"></script>
     <script>
       var chart = c3.generate({
         data: {
-          x: 'FECHA',
+          FECHA: 'FECHA',
           url: '/Seismometer_DATA/nanoEntitiesDataInvert.csv',
           labels: true
         },
         axis : {
-          x : {
+          FECHA : {
             type : 'timeseries',
             tick : {
               format : "%d-%m-%Y" // https://github.com/mbostock/d3/wiki/Time-Formatting#wiki-format
