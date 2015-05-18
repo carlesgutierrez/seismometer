@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <link href="/css/c3.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div id="chart"></div>
+
+    <script src="/js/d3/d3.min.js"></script>
+    <script src="/js/c3.js"></script>
+    <script>
+      var chart = c3.generate({
+        data: {
+          x: 'FECHA',
+          url: '/Seismometer_DATA/nanoEntitiesDataInvert.csv',
+          labels: true
+        },
+        axis : {
+          x : {
+            type : 'timeseries',
+            tick : {
+              format : "%d-%m-%Y" // https://github.com/mbostock/d3/wiki/Time-Formatting#wiki-format
+            }
+          }
+        },
+        subchart: {
+          show: true
+        },
+        zoom: {
+          enabled: true
+        },
+      });
+
+      //setTimeout(function () {
+      //  chart.load({
+      //    url: '/data/c3_test2_ts.csv'// '/Seismometer_DATA/nanoEntitiesDataInvert.csv'
+      //  });
+      //}, 1000);
+
+      setTimeout(function () {
+        chart.unload({
+          ids: 'FECHA'
+        });
+      }, 2000);
+
+      //setTimeout(function () {
+      //  chart.load({
+      //    columns: [
+      //      ['data1', 30, 20, 50, 40, 60, 50],
+      //    ],
+      //    unload: true,
+//          unload: ['data2', 'data3'],
+//          unload: ['data2']
+      //  });
+      //}, 3000);
+
+    </script>
+  </body>
+</html>
