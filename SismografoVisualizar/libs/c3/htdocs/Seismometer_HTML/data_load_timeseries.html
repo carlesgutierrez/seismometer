@@ -19,7 +19,17 @@
         data: {
           x: 'x',
           url: '/Seismometer_DATA/nanoEntitiesDataInvert.csv',
-          //labels: true
+          selection: {
+            enabled: true,
+            grouped: false,
+            multiple: true,
+          },
+          labels: false,
+           /*           // Update colors
+            chart.data.colors({
+              data1: '#FFFFFF',
+              data2: '#000000'
+            });*/
         },
         legend: {
           position: 'bottom'
@@ -96,6 +106,10 @@
         function tourAgricultura(){
           //10 seconds watching specific area
           setTimeout(function () {
+            //TODO Try to modify Agricultura to AREA type mode
+            chart.data.labels = true;
+            //chart.data.labels = true;
+
             //chart.axis.range({max: {x: '2013-09-12'}, min: {x: '2014-01-11'}});
             chart.zoom(['2013-09-12', '2014-01-11']);
             chart.focus('AGRICULTURA, GANADERIA, PESCA, ALIMENTACION Y MEDIO NATURAL');
@@ -104,6 +118,7 @@
         setTimeout(function () {
           //chart.axis.range({max: {x: '2013-05-26'}, min: {x: '2015-04-16'}});
           // Get the current zoomed domain
+          chart.data.labels = false;
           chart.unzoom();
           chart.focus();
 
