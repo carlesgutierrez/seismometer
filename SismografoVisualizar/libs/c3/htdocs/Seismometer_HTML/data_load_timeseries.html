@@ -4,7 +4,7 @@
   </head>
   <body>
 
-    <center><h3>Registro de cambios diarios de entidades en cada uno de los departamentos de la Generalitat de Catalunya</h3></center>
+    <p><h3>&nbsp&nbspRegistro de cambios diarios de entidades en cada uno de los departamentos de la Generalitat de Catalunya</h3></p>
 
     <div id="chart"></div>
     <script src="/js/d3/d3.min.js"></script>
@@ -32,9 +32,12 @@
             });*/
         },
         legend: {
-          position: 'bottom'
+          position: 'right'
         },
-        regions: [{start:'2014-01-08', end:'2014-03-10'}, {start:'2014-12-10', end:'2015-03-05'}],
+        regions: [{start:'2013-08-13', end:'2013-10-29'},
+                  {start:'2013-11-09', end:'2014-03-13'},
+                  {start:'2014-10-08', end:'2015-03-03'}
+                  ],
         axis : {
           x : {
             type : 'timeseries',
@@ -95,10 +98,13 @@
 
     </script>
     <div>
-      <button onclick="tourAgricultura()">Tour de los Agricultura</button>
+      <button onclick="tourAgricultura()">Zoom 10 segundos</button>
+      Detalle de los cambios de entidades en el Departamento de Agricultura entre 2013-09-12 y 2014-01-11.
     </div>
+    <BR>
     <div>
-      <button onclick="tourTerritorio()">Tour de los Territorio y Sostenibilidad</button>
+      <button onclick="tourTerritorio()">Zoom 10 segundos</button>
+      Detalle de los cambios de entidades en el Departamento de Territorio y Sostenibilidad entre 2013-09-06 y 2013-11-14
     </div>
       
       <script>
@@ -112,7 +118,7 @@
 
             //chart.axis.range({max: {x: '2013-09-12'}, min: {x: '2014-01-11'}});
             chart.zoom(['2013-09-12', '2014-01-11']);
-            chart.focus('AGRICULTURA, GANADERIA, PESCA, ALIMENTACION Y MEDIO NATURAL');
+            chart.focus('AGRICULTURA');
           }, 0000);
 
         setTimeout(function () {
