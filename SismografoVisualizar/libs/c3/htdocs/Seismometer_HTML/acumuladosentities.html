@@ -10,15 +10,23 @@
       var chart = c3.generate({
         data: {
           x: 'x',
-          url: '/Seismometer_DATA/nanoEntitiesDataInvert.csv',
+          url: '/Seismometer_DATA/acumulados.csv',
           //labels: true
+          //groups: [['PRESIDENCIA', 'GOBERNACION Y RELACIONES INSTITUCIONALES', 'ECONOMIA Y CONOCIMIENTO', 'EDUCACION','EDUCACION','CULTURA','SALUD','TERRITORIO Y SOSTENIBILIDAD','"AGRICULTURA, GANADERIA, PESCA, ALIMENTACION Y MEDIO NATURAL"','BIENESTAR SOCIAL Y FAMILIA','JUSTICIA','INTERIOR','EMPRESA Y EMPLEO']],
+          //hide: ['PRESIDENCIA', 'ECONOMIA Y CONOCIMIENTO','SALUD']
+          hide: true // hide all data
         },
-        regions: [{start:'2014-01-08', end:'2014-03-10'}, {start:'2014-12-10', end:'2015-03-05'}],
         axis : {
           x : {
             type : 'timeseries',
             tick : {
-              format : '%Y-%m-%d' // https://github.com/mbostock/d3/wiki/Time-Formatting#wiki-format
+              format : '%e %b %y' // https://github.com/mbostock/d3/wiki/Time-Formatting#wiki-format
+            }
+          },
+          y: {
+            label: {
+              text: 'Numero de Cambios por Entidad',
+              position: 'outer-middle'
             }
           }
         },
@@ -28,9 +36,7 @@
         zoom: {
           enabled: true
         },
-        size: {
-          height: 600
-        }
+        size:{height:700}
       });
 
       //setTimeout(function () {
