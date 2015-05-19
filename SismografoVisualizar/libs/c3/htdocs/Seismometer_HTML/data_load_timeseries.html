@@ -3,9 +3,16 @@
     <link href="/css/c3.css" rel="stylesheet" type="text/css">
   </head>
   <body>
+
+    <center><h3>Registro de cambios diarios de entidades en cada uno de los departamentos de la Generalitat de Catalunya</h3></center>
+
     <div id="chart"></div>
     <script src="/js/d3/d3.min.js"></script>
     <script src="/js/c3.js"></script>
+    <script src="/js/extensions/c3ext.js"></script>
+    <script src="/js/samples/zoom_reduction.js"></script>
+    
+
     <script>
       var chart = c3.generate({
         bindto: '#chart',
@@ -64,6 +71,22 @@
         }
       });
 
+      //Funciont to statt a small tour inside the shown data
+      function tour(){
+
+        setTimeout(function () {
+          chart.axis.range({max: {x: '2014-03-01'}, min: {x: '2014-04-01'}});
+        }, 4000);
+
+        setTimeout(function () {
+          chart.axis.range({max: {x: '2014-05-01'}, min: {x: '2014-06-01'}});
+        }, 8000);
+
+        setTimeout(function () {
+          chart.axis.range({max: {x: '2013-05-26'}, min: {x: '2015-04-16'}});
+        }, 10000);
+      }
+
       setTimeout(function () {
         chart.axis.range({max: {x: '2014-03-01'}, min: {x: '2014-04-01'}});
       }, 4000);
@@ -77,5 +100,8 @@
       }, 10000);
 
     </script>
+    <div>
+      <button onclick="tour()">Tour</button>
+    </div>
   </body>
 </html>
