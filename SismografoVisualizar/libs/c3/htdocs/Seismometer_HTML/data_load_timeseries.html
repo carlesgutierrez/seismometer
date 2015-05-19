@@ -84,15 +84,17 @@
         function tourAgricultura(){
           //10 seconds watching specific area
           setTimeout(function () {
-            chart.axis.range({max: {x: '2013-09-12'}, min: {x: '2014-01-11'}});
+            //chart.axis.range({max: {x: '2013-09-12'}, min: {x: '2014-01-11'}});
+            chart.zoom(['2013-09-12', '2014-01-11']);
             chart.focus('AGRICULTURA, GANADERIA, PESCA, ALIMENTACION Y MEDIO NATURAL');
           }, 0000);
 
         setTimeout(function () {
-          chart.axis.range({max: {x: '2013-05-26'}, min: {x: '2015-04-16'}});
-          //chart.tooltip.grouped = true;
+          //chart.axis.range({max: {x: '2013-05-26'}, min: {x: '2015-04-16'}});
+          // Get the current zoomed domain
+          chart.unzoom();
           chart.focus();
-          
+
         }, 10000);
       }
 
@@ -101,12 +103,14 @@
 
         //10 seconds watching specific area
         setTimeout(function () {
-          chart.axis.range({max: {x: '2013-09-06'}, min: {x: '2013-11-14'}});
+          //chart.axis.range({max: {x: '2013-09-06'}, min: {x: '2013-11-14'}});
+          chart.zoom(['2013-09-06', '2013-11-14']);
           chart.focus('TERRITORIO Y SOSTENIBILIDAD');
         }, 0000);
 
         setTimeout(function () {
-          chart.axis.range({max: {x: '2013-05-26'}, min: {x: '2015-04-16'}});
+          //chart.axis.range({max: {x: '2013-05-26'}, min: {x: '2015-04-16'}});
+          chart.unzoom();
           chart.focus();
 
         }, 6000);
