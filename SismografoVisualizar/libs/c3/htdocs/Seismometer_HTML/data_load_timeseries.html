@@ -8,13 +8,14 @@
     <script src="/js/c3.js"></script>
     <script>
       var chart = c3.generate({
+        bindto: '#chart',
         data: {
           x: 'x',
           url: '/Seismometer_DATA/nanoEntitiesDataInvert.csv',
           //labels: true
         },
         legend: {
-          position: 'right'
+          position: 'bottom'
         },
         regions: [{start:'2014-01-08', end:'2014-03-10'}, {start:'2014-12-10', end:'2015-03-05'}],
         axis : {
@@ -22,7 +23,8 @@
             type : 'timeseries',
             tick : {
               format : '%e %b %y' // https://github.com/mbostock/d3/wiki/Time-Formatting#wiki-format
-            }
+            },
+            //extent: ['2014-03-01', '2014-04-20']
           },
           y: {
             label: {
@@ -56,31 +58,23 @@
         },
         size: {
           height: 600
+        },
+        tooltip: {
+          grouped: false
         }
       });
 
-      //setTimeout(function () {
-      //  chart.load({
-      //    url: '/data/c3_test2_ts.csv'// '/Seismometer_DATA/nanoEntitiesDataInvert.csv'
-      //  });
-      //}, 1000);
+      setTimeout(function () {
+        chart.axis.range({max: {x: '2014-03-01'}, min: {x: '2014-04-01'}});
+      }, 4000);
 
       setTimeout(function () {
-        chart.unload({
-          ids: 'FECHA'
-        });
-      }, 2000);
+        chart.axis.range({max: {x: '2014-05-01'}, min: {x: '2014-06-01'}});
+      }, 8000);
 
-      //setTimeout(function () {
-      //  chart.load({
-      //    columns: [
-      //      ['data1', 30, 20, 50, 40, 60, 50],
-      //    ],
-      //    unload: true,
-//          unload: ['data2', 'data3'],
-//          unload: ['data2']
-      //  });
-      //}, 3000);
+      setTimeout(function () {
+        chart.axis.range({max: {x: '2014-05-26'}, min: {x: '2015-04-16'}});
+      }, 10000);
 
     </script>
   </body>
