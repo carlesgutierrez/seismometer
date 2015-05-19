@@ -71,37 +71,41 @@
         }
       });
 
-      //Funciont to statt a small tour inside the shown data
-      function tour(){
+    </script>
+    <div>
+      <button onclick="tourAgricultura()">Tour de los Agricultura</button>
+    </div>
+    <div>
+      <button onclick="tourBancos()">Tour de los Territorio y Sostenibilidad</button>
+    </div>
+      
+      <script>
+          //Funciont to statt a small tour inside the shown data
+      function tourAgricultura(){
 
+        //10 seconds watching specific area
         setTimeout(function () {
-          chart.axis.range({max: {x: '2014-03-01'}, min: {x: '2014-04-01'}});
-        }, 4000);
-
-        setTimeout(function () {
-          chart.axis.range({max: {x: '2014-05-01'}, min: {x: '2014-06-01'}});
-        }, 8000);
+          chart.axis.range({max: {x: '2013-09-12'}, min: {x: '2014-01-11'}});
+        }, 0000);
 
         setTimeout(function () {
           chart.axis.range({max: {x: '2013-05-26'}, min: {x: '2015-04-16'}});
         }, 10000);
       }
 
-      setTimeout(function () {
-        chart.axis.range({max: {x: '2014-03-01'}, min: {x: '2014-04-01'}});
-      }, 4000);
 
-      setTimeout(function () {
-        chart.axis.range({max: {x: '2014-05-01'}, min: {x: '2014-06-01'}});
-      }, 8000);
+      function tourTerritorio(){
 
-      setTimeout(function () {
-        chart.axis.range({max: {x: '2013-05-26'}, min: {x: '2015-04-16'}});
-      }, 10000);
+        //10 seconds watching specific area
+        setTimeout(function () {
+          chart.axis.range({max: {x: '2013-09-06'}, min: {x: '2013-11-14'}});
+        }, 0000);
+
+        setTimeout(function () {
+          chart.axis.range({max: {x: '2013-05-26'}, min: {x: '2015-04-16'}});
+        }, 6000);
+      }
 
     </script>
-    <div>
-      <button onclick="tour()">Tour</button>
-    </div>
   </body>
 </html>
