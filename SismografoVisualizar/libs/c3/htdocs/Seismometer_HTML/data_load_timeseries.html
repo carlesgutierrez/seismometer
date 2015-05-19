@@ -13,6 +13,9 @@
           url: '/Seismometer_DATA/nanoEntitiesDataInvert.csv',
           //labels: true
         },
+        legend: {
+          position: 'right'
+        },
         regions: [{start:'2014-01-08', end:'2014-03-10'}, {start:'2014-12-10', end:'2015-03-05'}],
         axis : {
           x : {
@@ -26,6 +29,23 @@
               text: 'Numero de Cambios por Entidad',
               position: 'outer-middle'
             }
+          }
+        },
+        grid: {
+          x: {
+            lines: [{
+               value: '2014-01-11',
+               text: 'impacto en los bancos',
+               class: 'lineFor20130104'
+            },
+              {
+                value: '2014-10-11',
+               text: 'prueba2',
+               class: 'lineFor20130104'
+             }]
+            },
+          lines: {
+            front: false
           }
         },
         subchart: {
